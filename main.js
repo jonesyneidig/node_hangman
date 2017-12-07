@@ -4,8 +4,6 @@ var isLetter = require('is-letter');
 //require objects/exports
 var Word = require('./word.js');
 var Game = require('./game.js');
-//hangman graphic
-var hangManDisplay = Game.newWord.hangman;
 
 //set the maxListener
 require('events').EventEmitter.prototype._maxListeners = 100;
@@ -30,7 +28,7 @@ var hangman = {
     inquirer.prompt([{
       name: "play",
       type: "confirm",
-      message: "Ready to play?"
+      message: "Ready to play Baseball Hangman?"
     }]).then(function(answer) {
       if(answer.play){
         that.newGame();
@@ -93,7 +91,6 @@ var hangman = {
             that.guessesRemaining--;
             that.display++;
             console.log('Guesses remaining: ' + that.guessesRemaining);
-            console.log(hangManDisplay[(that.display)-1]);
 
             console.log('\n*******************');
             console.log(that.currentWord.wordRender());
@@ -130,4 +127,3 @@ var hangman = {
 }
 
 hangman.startGame();
-
