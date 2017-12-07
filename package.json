@@ -1,0 +1,27 @@
+{
+  "name": "node_hangman",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jonesyneidig/node_hangman.git"
+  },
+  "keywords": [
+    "hangeman",
+    "nodejs"
+  ],
+  "author": "John Neidig",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jonesyneidig/node_hangman/issues"
+  },
+  "homepage": "https://github.com/jonesyneidig/node_hangman#readme",
+  "dependencies": {
+    "inquirer": "^4.0.1",
+    "is-letter": "^1.1.1"
+  }
+}
