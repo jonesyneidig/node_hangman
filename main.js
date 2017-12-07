@@ -39,7 +39,7 @@ var hangman = {
   //if they want to play starts new game.
   newGame: function() {
     if(this.guessesRemaining === 10) {
-      console.log("Okay! Here we go!");
+      console.log("Okay! Batter Up!");
       console.log('*****************');
       //generates random number based on the wordBank
       var randNum = Math.floor(Math.random()*this.wordBank.length);
@@ -87,10 +87,10 @@ var hangman = {
           var found = that.currentWord.checkIfLetterFound(letterReturned);
           //if none were found tell user they were wrong
           if(found === 0){
-            console.log('Nope! You guessed wrong.');
+            console.log('Nope! You guessed wrong, Inning Over!');
             that.guessesRemaining--;
             that.display++;
-            console.log('Guesses remaining: ' + that.guessesRemaining);
+            console.log('Innings left: ' + that.guessesRemaining);
 
             console.log('\n*******************');
             console.log(that.currentWord.wordRender());
@@ -98,15 +98,15 @@ var hangman = {
 
             console.log("Letters guessed: " + that.guessedLetters);
           } else{
-            console.log('Yes! You guessed right!');
+            console.log('Yes! Homerun!');
               //checks to see if user won
               if(that.currentWord.didWeFindTheWord() === true){
                 console.log(that.currentWord.wordRender());
-                console.log('Congratulations! You won the game!!!');
+                console.log('Congratulations! You won Baseball Hangman!!!');
                 // that.startGame();
               } else{
                 // display the user how many guesses remaining
-                console.log('Guesses remaining: ' + that.guessesRemaining);
+                console.log('Innings left: ' + that.guessesRemaining);
                 console.log(that.currentWord.wordRender());
                 console.log('\n*******************');
                 console.log("Letters guessed: " + that.guessedLetters);
@@ -115,7 +115,7 @@ var hangman = {
           if(that.guessesRemaining > 0 && that.currentWord.wordFound === false) {
             that.keepPromptingUser();
           }else if(that.guessesRemaining === 0){
-            console.log('Game over!');
+            console.log('Game over, You Struck Out!');
             console.log('The word you were guessing was: ' + that.currentWord.word);
           }
         } else{
